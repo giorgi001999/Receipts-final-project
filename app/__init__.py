@@ -46,11 +46,10 @@ def create_app():
 
     db.init_app(app)
     login_manager.init_app(app)
-    with app.app_context():
-        db.create_all()
 
     from app.models import User, Recipe
-
+    with app.app_context():
+         db.create_all()
     from app.routes.main import main
     app.register_blueprint(main)
 
