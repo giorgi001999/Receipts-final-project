@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Recipe - RecipeHub{% endblock %}
+
+{% block content %}
+
+<h1 class="mb-4">Edit Recipe</h1>
+
+<form method="POST">
+
+    {{ form.hidden_tag() }}
+
+    <div class="mb-3">
+        {{ form.title.label(class="form-label") }}
+        {{ form.title(class="form-control") }}
+    </div>
+
+    <div class="mb-3">
+        {{ form.short_description.label(class="form-label") }}
+        {{ form.short_description(class="form-control") }}
+    </div>
+
+    <div class="mb-3">
+        {{ form.full_recipe.label(class="form-label") }}
+        {{ form.full_recipe(class="form-control", rows="6") }}
+    </div>
+
+    <div class="mb-3">
+        {{ form.category.label(class="form-label") }}
+        {{ form.category(class="form-control") }}
+    </div>
+
+    <div class="mb-3">
+        {{ form.prep_time.label(class="form-label") }}
+        {{ form.prep_time(class="form-control") }}
+    </div>
+
+    <div class="mb-3">
+        {{ form.servings.label(class="form-label") }}
+        {{ form.servings(class="form-control") }}
+    </div>
+
+    {{ form.submit(class="btn btn-primary") }}
+
+</form>
+
+{% endblock %}
